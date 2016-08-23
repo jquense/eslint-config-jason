@@ -36,7 +36,10 @@ module.exports = {
     'no-cond-assign': 0,
     'no-this-before-super': 2,
     'no-trailing-spaces': 2,
-    'no-unused-expressions': 2,
+    'no-unused-expressions': [2, {
+      allowTernary: true,
+      allowShortCircuit: true
+    }],
     'no-unused-vars': [2, {
       'vars': 'all',
       'args': 'after-used',
