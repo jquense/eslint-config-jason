@@ -9,9 +9,13 @@ module.exports = {
     browser: true,
     node: true,
   },
-  "ecmaFeatures": {
-    "jsx": true,
-    "experimentalObjectRestSpread": true,
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      impliedStrict: true
+      "experimentalObjectRestSpread": true,
+    },
   },
   "plugins": [
     "react",
