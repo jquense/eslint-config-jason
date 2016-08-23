@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-jason",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "description": "The best style guide",
   "main": "index.js",
   "scripts": {
