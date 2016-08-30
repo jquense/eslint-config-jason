@@ -1,7 +1,7 @@
 module.exports = {
   extends: ['./base'].map(require.resolve),
-  env: {
-    mocha: true,
+  globals: {
+    sinon: true,
   },
   rules: {
     'no-console': 0,

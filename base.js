@@ -1,3 +1,4 @@
+
 module.exports = {
   extends: [
     'eslint:recommended',
@@ -6,8 +7,16 @@ module.exports = {
   ],
   env: {
     es6: true,
-    browser: true,
     node: true,
+  },
+  globals: {
+    cancelAnimationFrame: false,
+    clearTimeout: false,
+    document: false,
+    localStorage: false,
+    requestAnimationFrame: false,
+    setTimeout: false,
+    window: false,
   },
   parserOptions: {
     sourceType: 'module',
