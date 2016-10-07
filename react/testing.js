@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['./base'].map(require.resolve),
+  extends: ['../base/testing', '../'].map(require.resolve),
   globals: {
     sinon: true,
   },

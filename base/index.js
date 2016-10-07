@@ -3,7 +3,6 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:import/errors',
-    'plugin:import/react',
   ],
   env: {
     es6: true,
@@ -20,6 +19,7 @@ module.exports = {
   },
   parserOptions: {
     sourceType: 'module',
+    ecmaVersion: 6,
     ecmaFeatures: {
       jsx: true,
       impliedStrict: true,
@@ -27,7 +27,6 @@ module.exports = {
     },
   },
   plugins: [
-    'react',
     'import',
   ],
   rules: {
@@ -57,19 +56,5 @@ module.exports = {
     }],
 
     'import/no-duplicates': 2,
-    'react/display-name': 0,
-    'react/no-multi-comp': 0,
-    'react/jsx-no-undef': 2,
-    'react/jsx-uses-react': 2,
-    'react/react-in-jsx-scope': 2,
-    'react/jsx-wrap-multilines': 2,
-    'react/jsx-uses-vars': 2,
-    'react/prop-types': [2, {
-      'ignore': [
-        'children',
-        'className',
-        'style'
-      ]
-    }],
   }
 }

@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['./base', './base/testing'].map(require.resolve),
+  extends: ['./index', '../base/testing'].map(require.resolve),
   globals: {
     expect: true,
   },
