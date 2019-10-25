@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-jason",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "The best style guide",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/jquense/eslint-config-jason#readme",
   "peerDependencies": {
-    "eslint": "^4.0.0",
+    "eslint": ">= 4.0.0",
+    "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-import": "^1.14.0 || ^2.0.0"
   }
 }

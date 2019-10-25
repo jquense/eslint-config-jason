@@ -5,7 +5,6 @@ module.exports = {
     'plugin:import/errors',
   ],
   env: {
-    es6: true,
     node: true,
   },
   globals: {
@@ -13,17 +12,17 @@ module.exports = {
     clearTimeout: false,
     document: false,
     localStorage: false,
+    sessionStorage: false,
     requestAnimationFrame: false,
     setTimeout: false,
     window: false,
   },
   parserOptions: {
     sourceType: 'module',
-    ecmaVersion: 6,
+    ecmaVersion: 2018,
     ecmaFeatures: {
       jsx: true,
       impliedStrict: true,
-      experimentalObjectRestSpread: true,
     },
   },
   plugins: [
