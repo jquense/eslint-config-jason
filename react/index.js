@@ -2,20 +2,17 @@ let base = ['../base'].map(require.resolve)
 
 module.exports = {
   extends: base.concat(['plugin:import/react']),
-  plugins: ['react'],
+  plugins: ['react', 'react-hooks'],
   rules: {
-    'react/display-name': 0,
-    'react/no-multi-comp': 0,
-    'react/jsx-no-undef': 2,
-    'react/jsx-uses-react': 2,
-    'react/react-in-jsx-scope': 2,
-    'react/jsx-wrap-multilines': 2,
-    'react/jsx-uses-vars': 2,
-    'react/prop-types': [
-      2,
-      {
-        ignore: ['children', 'className', 'style'],
-      },
-    ],
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
+    'react/display-name': 'off',
+    'react/no-multi-comp': 'off',
+    'react/jsx-no-undef': 'error',
+    'react/jsx-uses-react': 'error',
+    'react/react-in-jsx-scope': 'error',
+    'react/jsx-wrap-multilines': 'error',
+    'react/jsx-uses-vars': 'error',
+    'react/prop-types': 'off',
   },
 }

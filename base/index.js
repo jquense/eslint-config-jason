@@ -1,19 +1,13 @@
+const confusingBrowserGlobals = require('confusing-browser-globals')
+
 module.exports = {
   parser: require.resolve('babel-eslint'),
   extends: ['eslint:recommended', 'plugin:import/errors'],
   env: {
     node: true,
+    browser: true,
   },
-  globals: {
-    cancelAnimationFrame: false,
-    clearTimeout: false,
-    document: false,
-    localStorage: false,
-    sessionStorage: false,
-    requestAnimationFrame: false,
-    setTimeout: false,
-    window: false,
-  },
+
   parserOptions: {
     sourceType: 'module',
     ecmaVersion: 2018,
@@ -22,16 +16,35 @@ module.exports = {
       impliedStrict: true,
     },
   },
+  globals: {
+    __DEV__: false,
+  },
   plugins: ['import'],
+  settings: {
+    'import/extensions': ['.js', '.ts', '.tsx'],
+    'import/parsers': {
+      [require.resolve('@typescript-eslint/parser')]: ['.ts', '.tsx'],
+      // needed for typescript files importing js, since the configured parser
+      // will be ts not babel-eslint for the host file
+      [require.resolve('babel-eslint')]: ['.js'],
+    },
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.ts', '.tsx'],
+      },
+    },
+  },
   rules: {
-    'global-require': 2,
-    'comma-spacing': 2,
-    'constructor-super': 2,
-    'func-call-spacing': 2,
-    'dot-notation': [2, { allowKeywords: true }],
-    'eol-last': 2,
+    'global-require': 'error',
+    'comma-spacing': 'error',
+    'constructor-super': 'error',
+    'func-call-spacing': 'error',
+    'dot-notation': ['error', { allowKeywords: true }],
+    'eol-last': 'error',
+    // disallow specific globals
+    'no-restricted-globals': ['error', ...confusingBrowserGlobals],
     quotes: [
-      2,
+      'error',
       'single',
       {
         avoidEscape: true,
@@ -39,9 +52,9 @@ module.exports = {
       },
     ],
 
-    'no-cond-assign': 0,
-    'no-this-before-super': 2,
-    'no-trailing-spaces': 2,
+    'no-cond-assign': 'off',
+    'no-this-before-super': 'error',
+    'no-trailing-spaces': 'error',
     'no-unused-expressions': [
       2,
       {
@@ -50,15 +63,37 @@ module.exports = {
       },
     ],
     'no-unused-vars': [
-      2,
+      'error',
       {
         vars: 'all',
+        varsIgnorePattern: '^_',
         args: 'after-used',
-        varsIgnorePattern: '^_$',
-        argsIgnorePattern: '^_$',
+        ignoreRestSiblings: false,
+        argsIgnorePattern: '^_',
       },
     ],
 
-    'import/no-duplicates': 2,
+    'import/no-duplicates': 'error',
   },
+
+  overrides: [
+    {
+      files: [
+        'tools/**',
+        'karma.conf.js',
+        'webpack.config.js',
+        'test/**',
+        '**/__tests__/**',
+        '**/__mocks__/**',
+      ],
+      rules: {
+        'global-require': 'off',
+        'no-dynamic-require': 'off',
+        'import/no-extraneous-dependencies': [
+          'error',
+          { devDependencies: true },
+        ],
+      },
+    },
+  ],
 }
