@@ -79,6 +79,50 @@ module.exports = {
 
   overrides: [
     {
+      files: ['*.ts', '*.tsx'],
+      extends: 'plugin:@typescript-eslint/recommended',
+      rules: {
+        'import/named': 'off',
+        'import/no-unresolved': 'off',
+        'import/default': 'off',
+        'import/namespace': 'off',
+        'no-use-before-define': 'off',
+        'no-useless-constructor': 'off',
+        'no-unused-expressions': 'off',
+
+        '@typescript-eslint/ban-ts-comment': 'off',
+        '@typescript-eslint/consistent-type-assertions': 'off',
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
+        '@typescript-eslint/naming-convention': 'off',
+        '@typescript-eslint/no-explicit-any': 'off',
+        '@typescript-eslint/no-non-null-assertion': 'off',
+        '@typescript-eslint/no-unused-expressions': [
+          'error',
+          {
+            allowTernary: true,
+            allowShortCircuit: true,
+          },
+        ],
+        '@typescript-eslint/no-shadow': [
+          'error',
+          {
+            ignoreTypeValueShadow: true,
+            ignoreFunctionTypeParameterNameValueShadow: true,
+          },
+        ],
+        '@typescript-eslint/no-unused-vars': [
+          'error',
+          {
+            vars: 'all',
+            varsIgnorePattern: '^_',
+            args: 'after-used',
+            ignoreRestSiblings: false,
+            argsIgnorePattern: '^_',
+          },
+        ],
+      },
+    },
+    {
       files: [
         'tools/**',
         'karma.conf.js',
