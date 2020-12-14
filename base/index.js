@@ -36,6 +36,7 @@ module.exports = {
     },
   },
   rules: {
+    'prefer-const': 'off',
     'global-require': 'error',
     'comma-spacing': 'error',
     'constructor-super': 'error',
@@ -90,6 +91,10 @@ module.exports = {
         'no-useless-constructor': 'off',
         'no-unused-expressions': 'off',
 
+        'import/export': 'off',
+        'import/no-duplicates': 'off',
+        '@typescript-eslint/no-this-alias': 'off',
+        '@typescript-eslint/ban-types': 'off',
         '@typescript-eslint/ban-ts-comment': 'off',
         '@typescript-eslint/consistent-type-assertions': 'off',
         '@typescript-eslint/explicit-module-boundary-types': 'off',
