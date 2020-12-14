@@ -83,6 +83,7 @@ module.exports = {
       files: ['*.ts', '*.tsx'],
       extends: 'plugin:@typescript-eslint/recommended',
       rules: {
+        'prefer-const': 'off',
         'import/named': 'off',
         'import/no-unresolved': 'off',
         'import/default': 'off',
