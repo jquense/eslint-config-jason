@@ -22,10 +22,10 @@
     "confusing-browser-globals": "^1.0.10"
   },
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.0.0",
-    "eslint": ">= 4.0.0",
-    "eslint-plugin-import": "^1.14.0 || ^2.0.0",
-    "eslint-plugin-react": "^7.12.4",
-    "eslint-plugin-react-hooks": "^2.5.0"
+    "@typescript-eslint/eslint-plugin": ">=4.0.0",
+    "eslint": ">=4.0.0",
+    "eslint-plugin-import": ">=2.0.0",
+    "eslint-plugin-react": ">=7.12.4",
+    "eslint-plugin-react-hooks": ">=2.5.0"
   }
 }
