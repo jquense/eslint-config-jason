@@ -2,6 +2,9 @@ const confusingBrowserGlobals = require("confusing-browser-globals");
 
 module.exports = {
   parser: require.resolve("@babel/eslint-parser"),
+  parserOptions: {
+    requireConfigFile: false,
+  },
   extends: ["eslint:recommended", "plugin:import/errors"],
   env: {
     es6: true,
